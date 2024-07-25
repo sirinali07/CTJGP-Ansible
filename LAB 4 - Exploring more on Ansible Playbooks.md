@@ -61,7 +61,7 @@ Add the given content, by pressing "INSERT"
           owner: root
           group: cloudthat
           mode: 0665
-    -   name: adding a block of string to the file created named hello.txt
+    -   name: adding content to the file created named hello.txt
         lineinfile:
           path: /home/cloudthat/ansible/hello.txt
           line: "This is line 1"
