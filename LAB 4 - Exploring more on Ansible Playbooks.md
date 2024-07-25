@@ -62,11 +62,9 @@ Add the given content, by pressing "INSERT"
           group: cloudthat
           mode: 0665
     -   name: adding a block of string to the file created named hello.txt
-        blockinfile:
+        lineinfile:
           path: /home/cloudthat/ansible/hello.txt
-          block: |
-            This is line 1
-            This is line 2
+          line: "This is line 1"
 
 ```
 **save the file using** `ESCAPE + :wq!`
