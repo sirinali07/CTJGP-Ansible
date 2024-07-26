@@ -82,6 +82,10 @@ vi index1.html
 </html>
 ```
 **save the file using** `ESCAPE + :wq!`
+
+```
+cd file/
+```
 ```
 ansible-playbook implement-vars.yml --extra-vars "source=/home/ec2-user/ansible-labs/index1.html"
 ```
