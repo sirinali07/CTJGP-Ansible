@@ -1,4 +1,4 @@
-## Lab 7: Implementing Ansible Vault
+## Lab : Implementing Ansible Vault
 ```
 cd ~/ansible-labs/file
 ```
