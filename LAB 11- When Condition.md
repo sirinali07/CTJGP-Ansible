@@ -1,9 +1,8 @@
 ```
 vi pckg.yaml
 ```
-```
----
----
+Add the given content, by pressing "INSERT"
+```yaml
 - name: Installing list of packages
   hosts: all
   become: yes
@@ -22,6 +21,11 @@ vi pckg.yaml
     when: ansible_facts['distribution'] == 'RedHat'
 
 ```
+save the file using ESCAPE + :wq!
+
+execute your Ansible playbook to install the specified packages:
 ```
 ansible-playbook pckg.yaml
 ```
+After running the playbook, check if the packages are installed on the managed nodes:
+
