@@ -40,5 +40,5 @@ exit
 ````
 Once you back to "control-Node", run the following command to verify package from Control-Node
 ```
-ansible all -m "command" -a "rpm -qa | grep httpd"
+ansible all -m "command" -a "sudo yum info httpd"
 ```
