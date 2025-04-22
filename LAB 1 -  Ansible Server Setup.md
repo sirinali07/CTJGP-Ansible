@@ -95,7 +95,7 @@ ansible all --list-hosts
 ssh ec2-user@< Replace Node 1 IP >
 ```
 ```
-sudo hostnamectl set-hostname managed-node-1
+sudo hostnamectl set-hostname target-node-1
 ```
 ```
 exit
@@ -104,7 +104,7 @@ exit
 ssh ec2-user@< Replace Node 2 IP >
 ```
 ```
-sudo hostnamectl set-hostname managed-node-2
+sudo hostnamectl set-hostname target-node-2
 ```
 ```
 exit
