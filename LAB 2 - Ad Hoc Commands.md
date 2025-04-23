@@ -32,12 +32,12 @@ ansible all -m user -a "name=ansible-new" --become
 
 lists all users in the machine. Check if ansible-new is present in the managed nodes / localhost
 ```
-ansible node1 -a "cat /etc/passwd"
+ansible node1 -m command -a "cat /etc/passwd"
 ```
 
 List all directories in /home. Ensure that directory 'ansible-new' is present in /home. 
 ```
-ansible node2 -a "ls /home"
+ansible node2 -m command -a "ls /home"
 ```
 
 Change the permission mode from '700' to '755' for the new home directory created for ansible-new
@@ -47,7 +47,7 @@ ansible node1 -m file -a "dest=/home/ansible-new mode=755" --become
 
 Check if the permissions got changed
 ```
-ansible node1 -a "sudo ls -l /home"
+ansible node1 -m command -a "sudo ls -l /home"
 ```
 
 Create a new file in the new dir in node 1
@@ -57,7 +57,7 @@ ansible node1 -m file -a "dest=/home/ansible-new/demo.txt mode=600 state=touch" 
 
 Check if the permissions got changed
 ```
-ansible node1 -a "sudo ls -l /home/ansible-new/"
+ansible node1 -m command -a "sudo ls -l /home/ansible-new/"
 ```
 
 Add content into the file
@@ -67,7 +67,7 @@ ansible node1 -b -m lineinfile -a 'dest=/home/ansible-new/demo.txt line="This se
 
 check if the lines are added in demo.txt
 ```
-ansible node1 -a "sudo cat /home/ansible-new/demo.txt"
+ansible node1 -m command -a "sudo cat /home/ansible-new/demo.txt"
 ```
 
 You can remove the line using parameter state=absent
@@ -94,7 +94,7 @@ ansible node1 -m copy -a "src=test.txt dest=/home/ansible-new/test" -b
 
 check if the file got copied to managed node.
 ```
-ansible node1 -b -a "sudo ls -l /home/ansible-new/test"
+ansible node1 -b -m command -a "sudo ls -l /home/ansible-new/test"
 ```
 ```
 sudo vi /etc/ansible/hosts
