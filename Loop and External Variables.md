@@ -26,11 +26,19 @@ This lab demonstrates how to create multiple Linux users using Ansible with:
 - **become: yes** — Run tasks with `sudo` privileges.
 - **vars_files** — Import variables from `variable.yaml`.
 - **Tasks** — Create users using a loop.
+  
+ansible-user-creation-lab/
+├── playbook.yaml
+├── variable.yaml
+└── README.md
 
 ## 🚀 How to Run
 
 Create a `playbook.yaml`
-
+```
+vi playbook.yaml
+```
+Add the given content, by pressing "INSERT"
 ```yaml
 - name: User Creation Playbook
   hosts: all
@@ -46,7 +54,14 @@ Create a `playbook.yaml`
         state: present
       loop: "{{ user_list }}"
 ```
+**save the file using** `ESCAPE + :wq!`
+
 Create a `user_list.yaml` variable file
+
+```
+vi user_list.yaml
+```
+Add the given content, by pressing "INSERT"
 ```yaml
 user_list:
   - { name: 'u1', uid: '8010' }
@@ -54,9 +69,11 @@ user_list:
   - { name: 'u3', uid: '8030' }
   - { name: 'u4', uid: '8040' }
 ```
-
+**save the file using** `ESCAPE + :wq!`
+Now run the playbook
+```
 ansible-playbook playbook.yaml
-
+```
 ## 📢 Notes
 - Make sure the `inventory` file is correctly pointing to your target hosts.
 - Ensure you have `become` privileges (sudo access) on the target machines.
