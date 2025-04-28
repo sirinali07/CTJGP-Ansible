@@ -27,10 +27,6 @@ This lab demonstrates how to create multiple Linux users using Ansible with:
 - **vars_files** — Import variables from `variable.yaml`.
 - **Tasks** — Create users using a loop.
   
-ansible-user-creation-lab/
-├── playbook.yaml
-├── variable.yaml
-└── README.md
 
 ## 🚀 How to Run
 
