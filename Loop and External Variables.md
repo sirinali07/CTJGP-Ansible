@@ -12,7 +12,7 @@ This lab demonstrates how to create multiple Linux users using Ansible with:
 |:-----|:------------|
 | `playbook.yaml` | The main Ansible playbook to create users. |
 | `variable.yaml` | External variables file containing the list of users. |
-| `README.md` | Instructions and explanation of the lab. |
+
 
 ## 🛠️ How It Works
 
@@ -50,4 +50,4 @@ This lab demonstrates how to create multiple Linux users using Ansible with:
 
 ---
 
-Made with ❤️ using Ansible.
+
