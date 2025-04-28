@@ -29,20 +29,33 @@ This lab demonstrates how to create multiple Linux users using Ansible with:
 
 ## 🚀 How to Run
 
-1. Clone the repository:
+Create a `playbook.yaml`
 
-    ```bash
-    git clone <your-repo-url>
-    cd ansible-user-creation-lab
-    ```
+```yaml
+- name: User Creation Playbook
+  hosts: all
+  become: yes
+  vars_files:
+    - variable.yaml
 
-2. Run the playbook:
+  tasks:
+    - name: Create users from the list
+      user:
+        name: "{{ item.name }}"
+        uid: "{{ item.uid }}"
+        state: present
+      loop: "{{ user_list }}"
+```
+Create a `user_list.yaml` variable file
+```yaml
+user_list:
+  - { name: 'u1', uid: '8010' }
+  - { name: 'u2', uid: '8020' }
+  - { name: 'u3', uid: '8030' }
+  - { name: 'u4', uid: '8040' }
+```
 
-    ```bash
-    ansible-playbook -i inventory playbook.yaml
-    ```
-
-    (Replace `inventory` with your actual inventory file.)
+ansible-playbook playbook.yaml
 
 ## 📢 Notes
 - Make sure the `inventory` file is correctly pointing to your target hosts.
