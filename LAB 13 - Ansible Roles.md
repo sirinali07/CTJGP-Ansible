@@ -114,6 +114,8 @@ cd ../..
 ```
 tree
 ```
+![image](https://github.com/user-attachments/assets/ec1929ba-ae78-42af-85a3-be3dceb79878)
+
 
 Now change the directory to ansible directory and create the playbook as implement-roles.yml
 ```
@@ -134,7 +136,7 @@ Add the given content, by pressing "INSERT".
 
 Execute the playbook
 ```
-ansible-playbook implement_roles.yml
+ansible-playbook implement-roles.yml
 ```
 Check the home page on browser. (Public DNS)
 It will show the webpage with msg "We are performing the Roles Lab"
