@@ -49,7 +49,7 @@ vi index.html
 ```
 
 Add the given content, by pressing "INSERT" 
-```
+```html
 <html>
   <body>
   <h1>Welcome to Ansible Training from CloudThat</h1>
