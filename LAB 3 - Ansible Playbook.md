@@ -8,8 +8,8 @@ mkdir ansible-labs && cd ansible-labs
 vi install-apache-pb.yml
 ```
 Add the given content, by pressing "INSERT"
-```
----yaml
+```yaml
+---
 - name: This play will install apache web servers on all the hosts
   hosts: all
   become: yes
