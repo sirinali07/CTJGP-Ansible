@@ -4,7 +4,7 @@ Create and edit promptlab.yml in the same labs directory
 ```
 vi promptlab.yml
 ```
-```
+```yaml
 ---
 - hosts: all
   become: yes
